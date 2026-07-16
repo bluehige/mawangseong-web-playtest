@@ -35,7 +35,7 @@ jobs:
           test -f index.js
           test -f index.pck
           test -f index.wasm
-          test "$(stat -c '%s' index.pck)" -eq 231378276
+          test "$(stat -c '%s' index.pck)" -eq 231378308
           test "$(stat -c '%s' index.wasm)" -eq 38047590
           grep -aFq "management_castle_bustle.wav" index.pck
           grep -aFq "combat_boss_council.wav" index.pck
