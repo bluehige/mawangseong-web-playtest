@@ -46,12 +46,12 @@ jobs:
           test -f v20-p11/index.wasm
           test -f v20-p11/build-version.txt
           test -f v20-p11/playtest-build.json
-          test "$(stat -c '%s' v20-p11/index.pck)" -eq 231748912
+          test "$(stat -c '%s' v20-p11/index.pck)" -eq 231569012
           test "$(stat -c '%s' v20-p11/index.wasm)" -eq 38047590
-          test "$(sha256sum v20-p11/index.pck | cut -d' ' -f1)" = "cc0cc314d59bf2dec3e95e066dbf5d74016baaa38827dce4fbe984315920c7fa"
+          test "$(sha256sum v20-p11/index.pck | cut -d' ' -f1)" = "888c16c9f1137af46762d99f711907ca183c1a764711896977c3876a9a7e7670"
           test "$(sha256sum v20-p11/index.wasm | cut -d' ' -f1)" = "6ead2ac528d007fe9627aae650444f9187f89420d7603c22460d8f3279545240"
-          grep -Fq "4b687aeea80b487f237e6c153dce8600989ec81b" v20-p11/build-version.txt
-          grep -Fq "v20-p11-blind-playtest" v20-p11/build-version.txt
+          grep -Fq "ef80b44e2317c8a2b72f4d54a1d16f75309679c8" v20-p11/build-version.txt
+          grep -Fq "v20-p11-intuitive-board-playtest" v20-p11/build-version.txt
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
