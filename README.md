@@ -11,3 +11,14 @@
 - PC Web PCK: 231,380,996바이트
 
 테스트 빌드이며 정식 출시 태그나 Steam 배포본을 대체하지 않습니다.
+
+## v2.0 Phase 11 블라인드 플레이테스트
+
+- 플레이: https://bluehige.github.io/mawangseong-web-playtest/v20-p11/
+- 테스트 채널: `v20-p11-blind-playtest`
+- 기준 소스: `bluehige/mawangseong-demo@4b687aeea80b487f237e6c153dce8600989ec81b`
+- 빌드 엔진: Godot 4.5.2
+- PC Web PCK: 231,748,912바이트
+- PCK SHA-256: `cc0cc314d59bf2dec3e95e066dbf5d74016baaa38827dce4fbe984315920c7fa`
+
+기존 루트 주소의 v1.2.1 공개판은 그대로 유지하며, 위 하위 주소만 v2.0 Phase 11 외부 테스트에 사용합니다.
