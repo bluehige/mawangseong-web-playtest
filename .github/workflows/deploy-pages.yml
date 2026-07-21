@@ -40,6 +40,18 @@ jobs:
           grep -aFq "management_castle_bustle.wav" index.pck
           grep -aFq "combat_boss_council.wav" index.pck
           grep -aFq "fireball.wav" index.pck
+          test -f v20-p11/index.html
+          test -f v20-p11/index.js
+          test -f v20-p11/index.pck
+          test -f v20-p11/index.wasm
+          test -f v20-p11/build-version.txt
+          test -f v20-p11/playtest-build.json
+          test "$(stat -c '%s' v20-p11/index.pck)" -eq 231748912
+          test "$(stat -c '%s' v20-p11/index.wasm)" -eq 38047590
+          test "$(sha256sum v20-p11/index.pck | cut -d' ' -f1)" = "cc0cc314d59bf2dec3e95e066dbf5d74016baaa38827dce4fbe984315920c7fa"
+          test "$(sha256sum v20-p11/index.wasm | cut -d' ' -f1)" = "6ead2ac528d007fe9627aae650444f9187f89420d7603c22460d8f3279545240"
+          grep -Fq "4b687aeea80b487f237e6c153dce8600989ec81b" v20-p11/build-version.txt
+          grep -Fq "v20-p11-blind-playtest" v20-p11/build-version.txt
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -52,6 +64,14 @@ jobs:
             index.icon.png index.apple-touch-icon.png \
             index.audio.position.worklet.js index.audio.worklet.js \
             .nojekyll _site/
+          mkdir -p _site/v20-p11
+          cp v20-p11/index.html v20-p11/index.js \
+            v20-p11/index.pck v20-p11/index.wasm v20-p11/index.png \
+            v20-p11/index.icon.png v20-p11/index.apple-touch-icon.png \
+            v20-p11/index.audio.position.worklet.js \
+            v20-p11/index.audio.worklet.js \
+            v20-p11/build-version.txt v20-p11/playtest-build.json \
+            _site/v20-p11/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
