@@ -34,3 +34,15 @@
 - PCK SHA-256: `6454fa55b35e14aba9ef87cd1daee1bd0eed780acb759328a7bf5dca1ee73f60`
 
 이 주소는 준비·전투·결과 UI/UX 재설계 검증용입니다. 기존 루트 v1.2.1과 `/v20-p11/` 빌드는 교체하지 않습니다.
+
+## v2.0 Phase 11S 고정 침입로 전략 배치 플레이테스트
+
+- 플레이: https://bluehige.github.io/mawangseong-web-playtest/v20-p11s/
+- 테스트 채널: `v20-p11s-fixed-castle-route-strategy-playtest`
+- 검수 기능 소스: `bluehige/mawangseong-demo@afa2cc592cffc1c758520f3d9d4c1f8472ab97e0`
+- release/v2.0 병합: `bluehige/mawangseong-demo@8b5022fa84a2a4697d02168972798f4ed26eac4f`
+- 빌드 엔진: Godot 4.5.2
+- PC Web PCK: 231,614,192바이트
+- PCK SHA-256: `9d3a381dab5db66374f607bf920958117186d8a04359b5b1685aaf23132e3284`
+
+이 주소는 하나의 고정 침입로와 네 전략 구역에서 시설·몬스터 배치 조합을 검증하는 전용 공개본입니다. 기존 루트 v1.2.1과 `/v20-p11/`, `/v20-p11r/` 빌드는 교체하지 않습니다.
