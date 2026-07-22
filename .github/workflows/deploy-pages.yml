@@ -52,6 +52,19 @@ jobs:
           test "$(sha256sum v20-p11/index.wasm | cut -d' ' -f1)" = "6ead2ac528d007fe9627aae650444f9187f89420d7603c22460d8f3279545240"
           grep -Fq "ef80b44e2317c8a2b72f4d54a1d16f75309679c8" v20-p11/build-version.txt
           grep -Fq "v20-p11-intuitive-board-playtest" v20-p11/build-version.txt
+          test -f v20-p11r/index.html
+          test -f v20-p11r/index.js
+          test -f v20-p11r/index.pck
+          test -f v20-p11r/index.wasm
+          test -f v20-p11r/build-version.txt
+          test -f v20-p11r/playtest-build.json
+          test "$(stat -c '%s' v20-p11r/index.pck)" -eq 231596228
+          test "$(stat -c '%s' v20-p11r/index.wasm)" -eq 38047590
+          test "$(sha256sum v20-p11r/index.pck | cut -d' ' -f1)" = "6454fa55b35e14aba9ef87cd1daee1bd0eed780acb759328a7bf5dca1ee73f60"
+          test "$(sha256sum v20-p11r/index.wasm | cut -d' ' -f1)" = "6ead2ac528d007fe9627aae650444f9187f89420d7603c22460d8f3279545240"
+          grep -Fq "1abb2b63b03d3711bc014b9d3b081e9300f7041d" v20-p11r/build-version.txt
+          grep -Fq "5d1d8fc603392e26a7e3d5fc1f862aa8bc0faf59" v20-p11r/build-version.txt
+          grep -Fq "v20-p11r-visual-command-board-playtest" v20-p11r/build-version.txt
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -72,6 +85,14 @@ jobs:
             v20-p11/index.audio.worklet.js \
             v20-p11/build-version.txt v20-p11/playtest-build.json \
             _site/v20-p11/
+          mkdir -p _site/v20-p11r
+          cp v20-p11r/index.html v20-p11r/index.js \
+            v20-p11r/index.pck v20-p11r/index.wasm v20-p11r/index.png \
+            v20-p11r/index.icon.png v20-p11r/index.apple-touch-icon.png \
+            v20-p11r/index.audio.position.worklet.js \
+            v20-p11r/index.audio.worklet.js \
+            v20-p11r/build-version.txt v20-p11r/playtest-build.json \
+            _site/v20-p11r/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
