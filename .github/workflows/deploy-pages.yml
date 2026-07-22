@@ -65,6 +65,27 @@ jobs:
           grep -Fq "1abb2b63b03d3711bc014b9d3b081e9300f7041d" v20-p11r/build-version.txt
           grep -Fq "5d1d8fc603392e26a7e3d5fc1f862aa8bc0faf59" v20-p11r/build-version.txt
           grep -Fq "v20-p11r-visual-command-board-playtest" v20-p11r/build-version.txt
+          test -f v20-p11s/index.html
+          test -f v20-p11s/index.js
+          test -f v20-p11s/index.pck
+          test -f v20-p11s/index.wasm
+          test -f v20-p11s/index.png
+          test -f v20-p11s/index.icon.png
+          test -f v20-p11s/index.apple-touch-icon.png
+          test -f v20-p11s/index.audio.position.worklet.js
+          test -f v20-p11s/index.audio.worklet.js
+          test -f v20-p11s/build-version.txt
+          test -f v20-p11s/playtest-build.json
+          test "$(stat -c '%s' v20-p11s/index.pck)" -eq 231614192
+          test "$(stat -c '%s' v20-p11s/index.wasm)" -eq 38047590
+          test "$(sha256sum v20-p11s/index.pck | cut -d' ' -f1)" = "9d3a381dab5db66374f607bf920958117186d8a04359b5b1685aaf23132e3284"
+          test "$(sha256sum v20-p11s/index.wasm | cut -d' ' -f1)" = "6ead2ac528d007fe9627aae650444f9187f89420d7603c22460d8f3279545240"
+          grep -Fq "afa2cc592cffc1c758520f3d9d4c1f8472ab97e0" v20-p11s/build-version.txt
+          grep -Fq "8b5022fa84a2a4697d02168972798f4ed26eac4f" v20-p11s/build-version.txt
+          grep -Fq "v20-p11s-fixed-castle-route-strategy-playtest" v20-p11s/build-version.txt
+          grep -Fq '"functional_commit": "afa2cc592cffc1c758520f3d9d4c1f8472ab97e0"' v20-p11s/playtest-build.json
+          grep -Fq '"release_commit": "8b5022fa84a2a4697d02168972798f4ed26eac4f"' v20-p11s/playtest-build.json
+          grep -Fq '"channel": "v20-p11s-fixed-castle-route-strategy-playtest"' v20-p11s/playtest-build.json
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
@@ -93,6 +114,14 @@ jobs:
             v20-p11r/index.audio.worklet.js \
             v20-p11r/build-version.txt v20-p11r/playtest-build.json \
             _site/v20-p11r/
+          mkdir -p _site/v20-p11s
+          cp v20-p11s/index.html v20-p11s/index.js \
+            v20-p11s/index.pck v20-p11s/index.wasm v20-p11s/index.png \
+            v20-p11s/index.icon.png v20-p11s/index.apple-touch-icon.png \
+            v20-p11s/index.audio.position.worklet.js \
+            v20-p11s/index.audio.worklet.js \
+            v20-p11s/build-version.txt v20-p11s/playtest-build.json \
+            _site/v20-p11s/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
