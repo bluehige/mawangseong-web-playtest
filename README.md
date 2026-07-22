@@ -46,3 +46,15 @@
 - PCK SHA-256: `9d3a381dab5db66374f607bf920958117186d8a04359b5b1685aaf23132e3284`
 
 이 주소는 하나의 고정 침입로와 네 전략 구역에서 시설·몬스터 배치 조합을 검증하는 전용 공개본입니다. 기존 루트 v1.2.1과 `/v20-p11/`, `/v20-p11r/` 빌드는 교체하지 않습니다.
+
+## v2.0 Phase 11T 순차 방어·몬스터 배치 플레이테스트
+
+- 플레이: https://bluehige.github.io/mawangseong-web-playtest/v20-p11t/
+- 테스트 채널: `v20-p11t-defense-stages-clarity-playtest`
+- 검수 기능 소스: `bluehige/mawangseong-demo@d1829eb21951ba8d1b4aebdf3103c148c4524c9e`
+- release/v2.0 병합: `bluehige/mawangseong-demo@4a15d3559f73e5dc5e6e636be82584d69b7d7a40`
+- 빌드 엔진: Godot 4.5.2
+- PC Web PCK: 231,636,336바이트
+- PCK SHA-256: `35572910695d3e957bc3c394ab25a9ef1f950d019d394bbad53befd0cb14366c`
+
+이 주소는 성문 전초부터 왕좌까지 각 구역을 순서대로 방어하는 흐름, 초상화 몬스터의 직접 드래그 배치, 밝아진 전투 지도와 방별 명령을 함께 검증하는 전용 공개본입니다. 기존 루트와 `/v20-p11/`, `/v20-p11r/`, `/v20-p11s/` 빌드는 교체하지 않습니다.
