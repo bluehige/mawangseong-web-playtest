@@ -1,0 +1,4 @@
+source_commit=eba61e87f42eb5af32e0d45a1db6c4a8a0822a1b
+functional_commit=065e2034981c94cb92497a64ed7eba630ec0486d
+channel=v20-ui-combat-battlefield-playtest
+build_kind=debug-acceptance
