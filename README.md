@@ -1,16 +1,17 @@
-# 마왕성 v1.2.1 · PC Web
+# 마왕성 v1.2.2 후보 S08 · PC Web
 
-데스크톱 브라우저용 공개 테스트 빌드입니다.
+UI 단순화와 배치·복도 이동 수정본을 확인하는 데스크톱 브라우저용 공개 테스트 빌드입니다.
 
 - 플레이: https://bluehige.github.io/mawangseong-web-playtest/
-- 공개 버전: `v1.2.1` (제품 표시 `v1.2`)
-- 다음 확장판: `v2.0` (기술 태그 `v2.0.0`)
-- 기준 소스: `bluehige/mawangseong-demo@c483d135b13cf9771ee43b045ba2c3dde51573ee`
+- 테스트 채널: `v122-ui-s08-deployment-polish-playtest`
+- 기준 소스 브랜치: `bluehige/mawangseong-demo`의 `codex/v122-ui-simplification`
+- 기준 소스 커밋: `321d56afe264488bb85593d2d1954b092d80532e` + S00~S08 승인 작업 트리
 - 빌드 엔진: Godot 4.5.2
-- 포함 변경: v1.2 기능 전체와 DAY 3 저장·재시도 복구, 가시 복도 튜토리얼 강조, 대화 UI 간격 조정, 자동전투 정체 복구
-- PC Web PCK: 231,380,996바이트
+- 포함 변경: 관리·전투 UI 단순화, 전장 직접 명령, 성 구조 편집 버튼 제거, 복도 장거리 순찰, 배치 화면의 이전 전투 액터 숨김
+- PC Web PCK: 242,757,700바이트
+- PCK SHA-256: `4317d76bd02beec77f651c05eaa1114b2a964a5a7369e008f2ad1bc78d2c3b90`
 
-테스트 빌드이며 정식 출시 태그나 Steam 배포본을 대체하지 않습니다.
+사용자 최종 검수 전 후보이며 정식 출시 태그나 Steam 배포본을 대체하지 않습니다. 모바일 Web 프리셋은 포함하지 않습니다.
 
 ## v2.0 Phase 11 블라인드 플레이테스트
 

@@ -1,0 +1,13 @@
+{
+  "channel": "v122-ui-s08-deployment-polish-playtest",
+  "source_repository": "bluehige/mawangseong-demo",
+  "source_branch": "codex/v122-ui-simplification",
+  "source_base_commit": "321d56afe264488bb85593d2d1954b092d80532e",
+  "build_kind": "local-working-tree-candidate",
+  "built_at": "2026-07-28T19:25:37+09:00",
+  "godot_version": "4.5.2",
+  "pck_size": 242757700,
+  "pck_sha256": "4317d76bd02beec77f651c05eaa1114b2a964a5a7369e008f2ad1bc78d2c3b90",
+  "wasm_size": 38047590,
+  "wasm_sha256": "6ead2ac528d007fe9627aae650444f9187f89420d7603c22460d8f3279545240"
+}
