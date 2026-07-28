@@ -1,15 +1,15 @@
-# 마왕성 v1.2.2 후보 S08 · PC Web
+# 마왕성 v1.2.2 후보 S09 · PC Web
 
-UI 단순화와 배치·복도 이동 수정본을 확인하는 데스크톱 브라우저용 공개 테스트 빌드입니다.
+DAY 2 가시 복도 안내 패널 가림을 수정한 데스크톱 브라우저용 공개 테스트 빌드입니다.
 
 - 플레이: https://bluehige.github.io/mawangseong-web-playtest/
-- 테스트 채널: `v122-ui-s08-deployment-polish-playtest`
+- 테스트 채널: `v122-ui-s09-day2-overlay-playtest`
 - 기준 소스 브랜치: `bluehige/mawangseong-demo`의 `codex/v122-ui-simplification`
-- 기준 소스 커밋: `321d56afe264488bb85593d2d1954b092d80532e` + S00~S08 승인 작업 트리
+- 기준 소스 커밋: `321d56afe264488bb85593d2d1954b092d80532e` + S00~S09 승인 작업 트리
 - 빌드 엔진: Godot 4.5.2
-- 포함 변경: 관리·전투 UI 단순화, 전장 직접 명령, 성 구조 편집 버튼 제거, 복도 장거리 순찰, 배치 화면의 이전 전투 액터 숨김
-- PC Web PCK: 242,757,700바이트
-- PCK SHA-256: `4317d76bd02beec77f651c05eaa1114b2a964a5a7369e008f2ad1bc78d2c3b90`
+- 포함 변경: S08 내용 전체, DAY 2 가시 복도 노란 클릭 표식과 안내 패널 분리, 방 클릭 즉시 다음 `함정 유도` 단계 전환
+- PC Web PCK: 242,757,652바이트
+- PCK SHA-256: `d76ffc00d8afe4874699ea5986d242353913b00b4b4d1397d97c82cfad79eea4`
 
 사용자 최종 검수 전 후보이며 정식 출시 태그나 Steam 배포본을 대체하지 않습니다. 모바일 Web 프리셋은 포함하지 않습니다.
 

@@ -1,9 +1,9 @@
-v122-ui-s08-deployment-polish-playtest
+v122-ui-s09-day2-overlay-playtest
 source_repository=bluehige/mawangseong-demo
 source_branch=codex/v122-ui-simplification
 source_base_commit=321d56afe264488bb85593d2d1954b092d80532e
 build_kind=local-working-tree-candidate
-built_at=2026-07-28T19:25:37+09:00
+built_at=2026-07-28T19:58:01+09:00
 godot=4.5.2
-pck_sha256=4317d76bd02beec77f651c05eaa1114b2a964a5a7369e008f2ad1bc78d2c3b90
+pck_sha256=d76ffc00d8afe4874699ea5986d242353913b00b4b4d1397d97c82cfad79eea4
 wasm_sha256=6ead2ac528d007fe9627aae650444f9187f89420d7603c22460d8f3279545240

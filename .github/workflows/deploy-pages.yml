@@ -37,11 +37,11 @@ jobs:
           test -f index.wasm
           test -f build-version.txt
           test -f playtest-build.json
-          test "$(stat -c '%s' index.pck)" -eq 242757700
+          test "$(stat -c '%s' index.pck)" -eq 242757652
           test "$(stat -c '%s' index.wasm)" -eq 38047590
-          test "$(sha256sum index.pck | cut -d' ' -f1)" = "4317d76bd02beec77f651c05eaa1114b2a964a5a7369e008f2ad1bc78d2c3b90"
+          test "$(sha256sum index.pck | cut -d' ' -f1)" = "d76ffc00d8afe4874699ea5986d242353913b00b4b4d1397d97c82cfad79eea4"
           test "$(sha256sum index.wasm | cut -d' ' -f1)" = "6ead2ac528d007fe9627aae650444f9187f89420d7603c22460d8f3279545240"
-          grep -Fq "v122-ui-s08-deployment-polish-playtest" build-version.txt
+          grep -Fq "v122-ui-s09-day2-overlay-playtest" build-version.txt
           grep -Fq '"source_base_commit": "321d56afe264488bb85593d2d1954b092d80532e"' playtest-build.json
           grep -aFq "management_castle_bustle.wav" index.pck
           grep -aFq "combat_boss_council.wav" index.pck
