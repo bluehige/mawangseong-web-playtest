@@ -1,4 +1,4 @@
-name: Deploy playtest to Pages
+name: Deploy latest QA build to Pages
 
 on:
   push:
@@ -23,12 +23,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - name: Check out playtest
+      - name: Check out latest QA build
         uses: actions/checkout@v4
         with:
           lfs: true
 
-      - name: Validate Godot export
+      - name: Validate latest Godot export
         shell: bash
         run: |
           test -f index.html
@@ -43,81 +43,11 @@ jobs:
           test "$(sha256sum index.wasm | cut -d' ' -f1)" = "6ead2ac528d007fe9627aae650444f9187f89420d7603c22460d8f3279545240"
           grep -Fq "v122-ui-s09-day2-overlay-playtest" build-version.txt
           grep -Fq '"source_base_commit": "321d56afe264488bb85593d2d1954b092d80532e"' playtest-build.json
-          grep -aFq "management_castle_bustle.wav" index.pck
-          grep -aFq "combat_boss_council.wav" index.pck
-          grep -aFq "fireball.wav" index.pck
-          test -f v20-p11/index.html
-          test -f v20-p11/index.js
-          test -f v20-p11/index.pck
-          test -f v20-p11/index.wasm
-          test -f v20-p11/build-version.txt
-          test -f v20-p11/playtest-build.json
-          test "$(stat -c '%s' v20-p11/index.pck)" -eq 231569012
-          test "$(stat -c '%s' v20-p11/index.wasm)" -eq 38047590
-          test "$(sha256sum v20-p11/index.pck | cut -d' ' -f1)" = "888c16c9f1137af46762d99f711907ca183c1a764711896977c3876a9a7e7670"
-          test "$(sha256sum v20-p11/index.wasm | cut -d' ' -f1)" = "6ead2ac528d007fe9627aae650444f9187f89420d7603c22460d8f3279545240"
-          grep -Fq "ef80b44e2317c8a2b72f4d54a1d16f75309679c8" v20-p11/build-version.txt
-          grep -Fq "v20-p11-intuitive-board-playtest" v20-p11/build-version.txt
-          test -f v20-p11r/index.html
-          test -f v20-p11r/index.js
-          test -f v20-p11r/index.pck
-          test -f v20-p11r/index.wasm
-          test -f v20-p11r/build-version.txt
-          test -f v20-p11r/playtest-build.json
-          test "$(stat -c '%s' v20-p11r/index.pck)" -eq 231596228
-          test "$(stat -c '%s' v20-p11r/index.wasm)" -eq 38047590
-          test "$(sha256sum v20-p11r/index.pck | cut -d' ' -f1)" = "6454fa55b35e14aba9ef87cd1daee1bd0eed780acb759328a7bf5dca1ee73f60"
-          test "$(sha256sum v20-p11r/index.wasm | cut -d' ' -f1)" = "6ead2ac528d007fe9627aae650444f9187f89420d7603c22460d8f3279545240"
-          grep -Fq "1abb2b63b03d3711bc014b9d3b081e9300f7041d" v20-p11r/build-version.txt
-          grep -Fq "5d1d8fc603392e26a7e3d5fc1f862aa8bc0faf59" v20-p11r/build-version.txt
-          grep -Fq "v20-p11r-visual-command-board-playtest" v20-p11r/build-version.txt
-          test -f v20-p11s/index.html
-          test -f v20-p11s/index.js
-          test -f v20-p11s/index.pck
-          test -f v20-p11s/index.wasm
-          test -f v20-p11s/index.png
-          test -f v20-p11s/index.icon.png
-          test -f v20-p11s/index.apple-touch-icon.png
-          test -f v20-p11s/index.audio.position.worklet.js
-          test -f v20-p11s/index.audio.worklet.js
-          test -f v20-p11s/build-version.txt
-          test -f v20-p11s/playtest-build.json
-          test "$(stat -c '%s' v20-p11s/index.pck)" -eq 231614192
-          test "$(stat -c '%s' v20-p11s/index.wasm)" -eq 38047590
-          test "$(sha256sum v20-p11s/index.pck | cut -d' ' -f1)" = "9d3a381dab5db66374f607bf920958117186d8a04359b5b1685aaf23132e3284"
-          test "$(sha256sum v20-p11s/index.wasm | cut -d' ' -f1)" = "6ead2ac528d007fe9627aae650444f9187f89420d7603c22460d8f3279545240"
-          grep -Fq "afa2cc592cffc1c758520f3d9d4c1f8472ab97e0" v20-p11s/build-version.txt
-          grep -Fq "8b5022fa84a2a4697d02168972798f4ed26eac4f" v20-p11s/build-version.txt
-          grep -Fq "v20-p11s-fixed-castle-route-strategy-playtest" v20-p11s/build-version.txt
-          grep -Fq '"functional_commit": "afa2cc592cffc1c758520f3d9d4c1f8472ab97e0"' v20-p11s/playtest-build.json
-          grep -Fq '"release_commit": "8b5022fa84a2a4697d02168972798f4ed26eac4f"' v20-p11s/playtest-build.json
-          grep -Fq '"channel": "v20-p11s-fixed-castle-route-strategy-playtest"' v20-p11s/playtest-build.json
-          test -f v20-p11t/index.html
-          test -f v20-p11t/index.js
-          test -f v20-p11t/index.pck
-          test -f v20-p11t/index.wasm
-          test -f v20-p11t/index.png
-          test -f v20-p11t/index.icon.png
-          test -f v20-p11t/index.apple-touch-icon.png
-          test -f v20-p11t/index.audio.position.worklet.js
-          test -f v20-p11t/index.audio.worklet.js
-          test -f v20-p11t/build-version.txt
-          test -f v20-p11t/playtest-build.json
-          test "$(stat -c '%s' v20-p11t/index.pck)" -eq 231636336
-          test "$(stat -c '%s' v20-p11t/index.wasm)" -eq 38047590
-          test "$(sha256sum v20-p11t/index.pck | cut -d' ' -f1)" = "35572910695d3e957bc3c394ab25a9ef1f950d019d394bbad53befd0cb14366c"
-          test "$(sha256sum v20-p11t/index.wasm | cut -d' ' -f1)" = "6ead2ac528d007fe9627aae650444f9187f89420d7603c22460d8f3279545240"
-          grep -Fq "d1829eb21951ba8d1b4aebdf3103c148c4524c9e" v20-p11t/build-version.txt
-          grep -Fq "4a15d3559f73e5dc5e6e636be82584d69b7d7a40" v20-p11t/build-version.txt
-          grep -Fq "v20-p11t-defense-stages-clarity-playtest" v20-p11t/build-version.txt
-          grep -Fq '"functional_commit": "d1829eb21951ba8d1b4aebdf3103c148c4524c9e"' v20-p11t/playtest-build.json
-          grep -Fq '"release_commit": "4a15d3559f73e5dc5e6e636be82584d69b7d7a40"' v20-p11t/playtest-build.json
-          grep -Fq '"channel": "v20-p11t-defense-stages-clarity-playtest"' v20-p11t/playtest-build.json
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
-      - name: Prepare Pages artifact
+      - name: Prepare latest Pages artifact
         shell: bash
         run: |
           mkdir _site
@@ -125,38 +55,6 @@ jobs:
             index.icon.png index.apple-touch-icon.png \
             index.audio.position.worklet.js index.audio.worklet.js \
             build-version.txt playtest-build.json .nojekyll _site/
-          mkdir -p _site/v20-p11
-          cp v20-p11/index.html v20-p11/index.js \
-            v20-p11/index.pck v20-p11/index.wasm v20-p11/index.png \
-            v20-p11/index.icon.png v20-p11/index.apple-touch-icon.png \
-            v20-p11/index.audio.position.worklet.js \
-            v20-p11/index.audio.worklet.js \
-            v20-p11/build-version.txt v20-p11/playtest-build.json \
-            _site/v20-p11/
-          mkdir -p _site/v20-p11r
-          cp v20-p11r/index.html v20-p11r/index.js \
-            v20-p11r/index.pck v20-p11r/index.wasm v20-p11r/index.png \
-            v20-p11r/index.icon.png v20-p11r/index.apple-touch-icon.png \
-            v20-p11r/index.audio.position.worklet.js \
-            v20-p11r/index.audio.worklet.js \
-            v20-p11r/build-version.txt v20-p11r/playtest-build.json \
-            _site/v20-p11r/
-          mkdir -p _site/v20-p11s
-          cp v20-p11s/index.html v20-p11s/index.js \
-            v20-p11s/index.pck v20-p11s/index.wasm v20-p11s/index.png \
-            v20-p11s/index.icon.png v20-p11s/index.apple-touch-icon.png \
-            v20-p11s/index.audio.position.worklet.js \
-            v20-p11s/index.audio.worklet.js \
-            v20-p11s/build-version.txt v20-p11s/playtest-build.json \
-            _site/v20-p11s/
-          mkdir -p _site/v20-p11t
-          cp v20-p11t/index.html v20-p11t/index.js \
-            v20-p11t/index.pck v20-p11t/index.wasm v20-p11t/index.png \
-            v20-p11t/index.icon.png v20-p11t/index.apple-touch-icon.png \
-            v20-p11t/index.audio.position.worklet.js \
-            v20-p11t/index.audio.worklet.js \
-            v20-p11t/build-version.txt v20-p11t/playtest-build.json \
-            _site/v20-p11t/
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v4
