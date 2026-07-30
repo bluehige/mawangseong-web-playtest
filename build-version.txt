@@ -1,9 +1,9 @@
-v122-ui-s09-day2-overlay-playtest
+v122-feedback-routing-performance-web-qa
 source_repository=bluehige/mawangseong-demo
 source_branch=codex/v122-ui-simplification
-source_base_commit=321d56afe264488bb85593d2d1954b092d80532e
-build_kind=local-working-tree-candidate
-built_at=2026-07-28T19:58:01+09:00
+source_base_commit=5b423c9ef734c310cd5c9c688f9e6d4cf9ffd146
+build_kind=committed-source-candidate
+built_at=2026-07-30T15:43:22+09:00
 godot=4.5.2
-pck_sha256=d76ffc00d8afe4874699ea5986d242353913b00b4b4d1397d97c82cfad79eea4
+pck_sha256=85c3db1a1fcd47f04ee79e5a46ed0e064ea732bdccfdaccdf4567b09f2c76765
 wasm_sha256=6ead2ac528d007fe9627aae650444f9187f89420d7603c22460d8f3279545240
